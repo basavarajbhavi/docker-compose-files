@@ -4,8 +4,6 @@ services:
   # nginx proxy container
   nginx-proxy:
     image: jwilder/nginx-proxy
-    networks:
-      jobcheck-dev-network:
     container_name: nginx-proxy
     restart: always
     ports:
@@ -24,8 +22,6 @@ services:
   # letsencrypt cert container
   nginx-proxy-letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
-    networks:
-      jobcheck-dev-network:
     container_name: nginx-proxy-letsencrypt
     restart: always
     environment:
